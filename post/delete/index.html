@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>deletePost</title>
     <script type="module" src="/src/app.js"></script>
   </head>
 
@@ -12,18 +12,16 @@
     <header>
       <div id="nav"></div>
     </header>
-    <h1>Edit Post</h1>
+    <h1>deletePost</h1>
 
-    <form name="editPost">
-      <button>Edit Post</button>
+    <form name="deletePostForm">
+      <button type="submit">deletePost</button>
     </form>
+    <script type="module" src="/src/js/ui/post/delete.js"></script>
     <script type="module">
       import { loadNav } from "/src/js/ui/global/nav.js";
       loadNav();
     </script>
-    <script type="module">
-      import { loadNav } from "/src/js/ui/global/nav.js";
-      loadNav();
-    </script>
+   
   </body>
 </html>

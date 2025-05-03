@@ -17,8 +17,8 @@ export function loadNav() {
       </div>
       <div class="nav-center">
         <a href="/index.html"><i class="fa-solid fa-home"></i> Home</a>
-        <a href="/follow/following/bffdairy.html"><i class="fa-solid fa-user-group"></i> BFF Diary</a>
-        <a href="/follow/following/lockdairy.html"><i class="fa-solid fa-lock"></i> Lock Diary</a>
+        <a href="/follow/friends/following.html"><i class="fa-solid fa-user-group"></i> BFF Diary</a>
+        <a href="/follow/friends/lockdairy.html"><i class="fa-solid fa-lock"></i> Lock Diary</a>
       </div>
       <div class="nav-right">
         <a href="/post/create/index.html"><i class="fa-solid fa-plus"></i> Create Post</a>

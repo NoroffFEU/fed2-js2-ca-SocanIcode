@@ -5,7 +5,7 @@ import { headers } from "../headers.js";
 export async function deletePost(id) {
   const res = await fetch(API_POST_BY_ID(id), {
     method: "DELETE",
-    headers: headers()
+    headers: headers(true)
   });
 
   if (!res.ok) {

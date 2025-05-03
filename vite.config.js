@@ -22,7 +22,9 @@ export default defineConfig({
         post: resolve(__dirname, "./post/index.html"),
         editPost: resolve(__dirname, "./post/edit/index.html"),
         createPost: resolve(__dirname, "./post/create/index.html"),
-        settings: path.resolve(__dirname, 'settings/index.html')
+        settings: resolve(__dirname, "./settings/index.html"),
+        following resolve(__dirname, "./follow/friends/following.html"),
+
         
       },
     },

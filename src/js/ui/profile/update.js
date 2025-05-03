@@ -35,7 +35,7 @@ function renderProfile(profile) {
     `;
   }
 
-  // Update avatar
+  // the image  is not diplayed as an avatar, I need to fix it
   if (avatarContainer) {
     avatarContainer.innerHTML = `
       <img id="profileAvatar" src="${profile.avatar?.url || "#"}" alt="${profile.avatar?.alt || "Avatar"}" class="avatar">
@@ -72,7 +72,7 @@ function setupForm(profile, username) {
   // Hide form by default
   form.style.display = "none";
 
-  // Toggle show/hide
+
   editBtn.addEventListener("click", () => {
     form.style.display = "block";
     editBtn.style.display = "none";

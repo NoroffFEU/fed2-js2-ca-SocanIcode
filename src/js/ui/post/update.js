@@ -1,7 +1,7 @@
-import { readPostById } from "@/js/api/post/read.js";
-import { updatePost } from "@/js/api/post/update.js";
+import { readPostById } from "@/js/api/post/edit.js";
+import { fetchPostsBYId } from "../../api/post/update";
 
-// Get post ID from URL
+
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("id");
 
@@ -14,7 +14,7 @@ if (!postId) {
 
 async function initEditForm() {
   try {
-    const post = await readPostById(postId);
+    const post = await fetchPostsBYId(postId);
 
     form.title.value = post.title;
     form.body.value = post.body;
@@ -23,7 +23,7 @@ async function initEditForm() {
     form.mediaAlt.value = post.media?.alt || "";
 
   } catch (err) {
-    alert("❌ Failed to load post");
+    alert(" Failed to load post");
     console.error(err);
   }
 }
@@ -31,8 +31,8 @@ async function initEditForm() {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const updatedPost = {
-    title: form.title.value.trim(),
+  const updatedData = {
+    title:form.title.value.trim(),
     body: form.body.value.trim(),
     tags: form.tags.value.split(",").map(tag => tag.trim()),
     media: {
@@ -42,10 +42,11 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    await updatePost(postId, updatedPost);
+    await updatePost(postId, updatedData);
     alert(" Post updated!");
-    window.location.href = "/index.html";
+    window.location.href = "/index.html?updated=1";
   } catch (err) {
+    console.error("failed to update:",err);
     alert(" Update failed");
     console.error(err);
   }

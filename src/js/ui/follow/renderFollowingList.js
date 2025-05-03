@@ -1,17 +1,6 @@
-import { getFollowing, unfollowUser } from "@/js/api/follow/following.js";
-
-const username = JSON.parse(localStorage.getItem("user"))?.name;
-const container = document.getElementById("followingContainer");
-
-if (!username) {
-  container.innerHTML = "<p>Please log in to see your following list.</p>";
-} else {
-  renderFollowingList(username);
-}
-
 async function renderFollowingList(username) {
   try {
-    const users = await getFollowing(username);
+    const { data: users } = await getFollowing(username);
     container.innerHTML = "";
 
     users.forEach(user => {
@@ -19,7 +8,7 @@ async function renderFollowingList(username) {
       box.classList.add("follow-box");
 
       box.innerHTML = `
-        <img src="${user.avatar}" alt="${user.name}'s avatar" class="avatar" />
+        <img src="${user.avatar?.url || '#'}" alt="${user.name}'s avatar" class="avatar" />
         <span>${user.name}</span>
         <button class="unfollow-btn" data-username="${user.name}">Unfollow</button>
       `;
@@ -32,7 +21,7 @@ async function renderFollowingList(username) {
         const targetUser = e.target.dataset.username;
         if (confirm(`Unfollow ${targetUser}?`)) {
           await unfollowUser(targetUser);
-          renderFollowingList(username); // Refresh
+          renderFollowingList(username);
         }
       });
     });
