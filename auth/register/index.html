@@ -4,52 +4,49 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>Register</title>
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <link rel="stylesheet" href="../../src/css/_reset.css" />
   </head>
-
   <body>
-    <h1>Register</h1>
-
-    <form name="register">
-      <div>
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
-      </div>
-
-      <div>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
-      </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          minlength="8"
-        />
-      </div>
-
-      <a href="/auth/login/">Login</a>
-      <button>Register</button>
+    
+    <div  class="auth">
+    <h2>Register</h2><form id="registerForm" novalidate>
+      <label for="name">Name<span>*</span></label>
+      <input type="text" id="name" name="name" placeholder="Username" required autocomplete="name"  value="azeb"/>
+    
+      <label for="email">Email<span>*</span></label>
+      <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email" value="azesam02745@stud.noroff.noM"/>
+    
+      <label for="password">Password<span>*</span></label>
+      <input type="password" id="password" name="password" placeholder="Password" required autocomplete="new-password" value="Yimuma2721!"/>
+    
+      <label for="bio">Bio</label>
+      <input id="bio" name="bio" autocomplete="off" />
+    
+      <label for="avatar-url">Avatar URL</label>
+      <input id="avatar-url" name="avatar-url" autocomplete="off" />
+    
+      <label for="avatar-alt">Avatar ALT</label>
+      <input id="avatar-alt" name="avatar-alt" autocomplete="off" />
+    
+      <label for="banner-url">Banner URL</label>
+      <input id="banner-url" name="banner-url" autocomplete="off" />
+    
+      <label for="banner-alt">Banner ALT</label>
+      <input id="banner-alt" name="banner-alt" autocomplete="off" />
+    
+      <button type="submit">Register</button>
+      <a class="no-border" href="/auth/login/">Login</a>
     </form>
+    
+    </div>
+    <!--script section-->
+    
+    <script type="module">
+      import {handleRegisterForm} from "/src/js/ui/auth/register.js";
+      handleRegisterForm();
+    </script>
+
   </body>
 </html>

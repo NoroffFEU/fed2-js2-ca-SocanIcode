@@ -4,14 +4,64 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/_reset.css" /> 
+     <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
   </head>
   <body>
-    <h1>Profile</h1>
+    <header>
+    <div id="nav"></div>
+   </header>
+     <h1 id="username"></h1>
+     <main>
+     
+  <div id="profileContainer">
+    <div id="bannerContainer"></div>
+<div id="avatarContainer"></div>
+<h2 id="username"></h2>
+<p id="profileBio"></p>
 
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+
+  
+  <a href="../settings/index.html">settings<i class="fa-solid fa-gear"></i></a>
+  <button id="editProfileBtn">Edit Profile</button>
+
+  <form id="updateProfileForm">
+
+    <input type="text" id="bio" name="bio" placeholder="Bio" />
+    <input type="url" id="avatar-url" name="avatar-url" placeholder="Avatar URL" />
+    <input type="text" id="avatar-alt" name="avatar-alt" placeholder="Avatar ALT text" />
+    <input type="url" id="banner-url" name="banner-url" placeholder="Banner URL" />
+    <input type="text" id="banner-alt" name="banner-alt" placeholder="Banner ALT text" />
+    <button type="submit">Update Profile</button>
+
+  </form>
+    <div id="profileInfo">
+    <a href="../follow/followers.html" id="followingButton" data-action="follow">Following</a>
+    <a href=".././follow/following/bffdairy.html" id="followersButton" data-action="follow">BFF Dairy</a>
+    <a href=".././follow/following/bffdairy.html"><i class="fa-solid fa-user-group"></i> Lock Dairy</a>
+   
+
+  </div>
+</div>
+</main>
+
+    
+    <!-- script start here-->
+
+    <script type="module" src="/src/js/ui/profile/update.js"></script>
+
+  <script type="module">
+    import { loadNav } from "/src/js/ui/global/nav.js";
+    loadNav();
+  </script>
+    
   </body>
-</html>
+  </html>

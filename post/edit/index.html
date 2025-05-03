@@ -9,10 +9,30 @@
   </head>
 
   <body>
-    <h1>Edit Post</h1>
-
-    <form name="editPost">
-      <button>Edit Post</button>
-    </form>
+    <header>
+      <div id="nav"></div>
+    </header>
+    <main>
+      <h1>Edit Post</h1>
+      <form id="editPostForm">
+        <input name="title" placeholder="Title" required />
+        <textarea name="body" placeholder="Body" required></textarea>
+        <input name="tags" placeholder="Comma-separated tags" />
+        <input name="media" placeholder="Image URL" />
+        <input name="mediaAlt" placeholder="Image alt text" />
+        <button type="submit">Update Post</button>
+      </form>
+    </main>
+    
+    <script type="module" src="/src/js/ui/post/edit.js"></script>
+    
+    <script type="module">
+      import { loadNav } from "/src/js/ui/global/nav.js";
+      loadNav();
+    </script>
+    <script type="module">
+      import { loadNav } from "/src/js/ui/global/nav.js";
+      loadNav();
+    </script>
   </body>
 </html>

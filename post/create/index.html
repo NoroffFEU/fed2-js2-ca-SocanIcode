@@ -3,14 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
-  <body>
-    <h1>Create Post</h1>
+    <title>Create Post</title>
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <link rel="stylesheet" href="../../src/css/style.css" /> 
+     <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+</head>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
-  </body>
+<body>
+  <header>
+    <div id="nav"></div>
+  </header>
+
+  <form id="createPostForm" class="auth">
+    <input name="title" placeholder="Title" required  value ="The Art of Ethiopian cofeee"/>
+    <textarea name="body" placeholder="Body" required ></textarea>
+    <input name="tags" placeholder="Comma-separated tags" />
+    <input name="media" placeholder="Image URL" />
+    <input name="mediaAlt" placeholder="Image alt text" />
+    
+    <button type="submit">Create Post</button>
+  </form>
+  
+  
+
+  <script type="module" src="/src/js/ui/post/create.js"></script>
+  <script type="module" src="/src/js/api/post/create.js"></script>
+  <script type="module">
+    import { loadNav } from "/src/js/ui/global/nav.js";
+    loadNav();
+  </script>
+</body>
 </html>

@@ -1,22 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noroff FED2 JS2 CA</title>
-  <script type="module" src="/src/app.js"></script>
+  <title>Social Media App</title>
+  <link rel="stylesheet" href="./src/css/style.css" />
+  <link rel="stylesheet" href="./src/css/_reset.css" />  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+
 </head>
-
 <body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+  <header>
 
-  <h1>Home</h1>
+    <div id="nav"></div>
 
-  <a href="/profile/">My Profile</a>
-  <a href="/auth/login/">Login</a>
-  <a href="/auth/register/">Register</a>
-  <button>Logout</button>
+  </header>
+
+  <main class="feed-container">
+    <h1>New Feeds</h1>
+    <section id="post-box"></section>
+  </main>
+  
+
+  <script type="module">
+    import { loadNav } from "/src/js/ui/global/nav.js";
+    loadNav();
+  </script>
+<script type="module">
+  import { renderFeed } from "/src/js/ui/post/renderCards.js";
+  renderFeed();
+</script>
+
+
 </body>
 </html>

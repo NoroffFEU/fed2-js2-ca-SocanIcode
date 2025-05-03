@@ -1,5 +1,14 @@
-export async function readPost(id) {}
 
-export async function readPosts(limit = 12, page = 1, tag) {}
+// mine
+import { API_POST_BY_ID } from "../constants.js";
 
-export async function readPostsByUser(username, limit = 12, page = 1, tag) {}
+import { headers } from "../headers.js";
+
+export async function readPostById(id) {
+  const res = await fetch(API_POST_BY_ID(id), {
+    headers: headers()
+  });
+  if (!res.ok) throw new Error("Failed to fetch post");
+  return await res.json();
+}
+
