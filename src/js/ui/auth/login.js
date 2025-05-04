@@ -26,7 +26,7 @@ export function handleLoginForm() {
 
       alert("Login successful! Redirecting to your profile...");
   
-        window.location.href = "/profile/index.html";
+        window.location.href = "/index.html";
     
     } catch (error) {
       console.error("Login error:", error);

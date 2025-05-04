@@ -49,7 +49,7 @@ export const API_PROFILE_UNFOLLOW = (name) => `${API_PROFILES_BASE}/${name}/unfo
 export const API_POSTS_BASE = `${API_SOCIAL}/posts`;
 
 export const API_POST_BY_ID = (id) => `${API_POSTS_BASE}/${id}`;                                // GET, PUT, DELETE
-export const API_POST_REACT = (id, symbol) => `${API_POSTS_BASE}/${id}/react/${symbol}`;        // PUT
+export const API_POST_REACT = (id, symbol) => `${API_POSTS_BASE}/${id}/react/${encodeURIComponent(symbol)}`;        // PUT
 export const API_POST_COMMENT = (id) => `${API_POSTS_BASE}/${id}/comment`;                      // GET, POST
 export const API_DELETE_COMMENT = (id, commentId) => `${API_POSTS_BASE}/${id}/comment/${commentId}`; // DELETE
 export const API_POSTS_FOLLOWING = `${API_POSTS_BASE}/following`;                               // GET

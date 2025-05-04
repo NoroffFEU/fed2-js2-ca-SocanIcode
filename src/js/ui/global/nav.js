@@ -1,5 +1,5 @@
 /**
- * Dynamically loads the main navigation bar into the page.
+ * Dynamically loads the  navigation bar into the pages.
  * Redirects on logo click based on current page.
  */
 export function loadNav() {
@@ -21,6 +21,9 @@ export function loadNav() {
         <a href="/follow/friends/lockdairy.html"><i class="fa-solid fa-lock"></i> Lock Diary</a>
       </div>
       <div class="nav-right">
+      <form id="navSearchForm">
+      <input type="text" id="navSearchInput" placeholder="Search" />
+      </form>
         <a href="/post/create/index.html"><i class="fa-solid fa-plus"></i> Create Post</a>
         <a href="/messages/index.html"><i class="fa-solid fa-message"></i></a>
         <a href="/notifications/index.html"><i class="fa-solid fa-bell"></i></a>
@@ -32,6 +35,8 @@ export function loadNav() {
   `;
 
   const logo = document.getElementById("nav-logo");
+  const navForm = document.getElementById("navSearchForm");
+const navInput = document.getElementById("navSearchInput");
 
   if (
     currentPath === "/" ||
@@ -40,11 +45,19 @@ export function loadNav() {
   ) {
     logo.addEventListener("click", () => {
       alert("Welcome to SocialMedia! Register to get started.");
-      window.location.href = "/auth/index.html";
+      window.location.href = "/index.html";
     });
   } else {
     logo.addEventListener("click", () => {
       window.location.href = "/feed/index.html";
     });
+
+    navForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const query = navInput.value.trim();
+  if (query) {
+    window.location.href = `/search.html?query=${encodeURIComponent(query)}`;
+  }
+});
   }
 }

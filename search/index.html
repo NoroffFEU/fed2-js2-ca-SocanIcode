@@ -18,6 +18,17 @@
     <header>
         <div id="nav"></div>
        </header>
+       <main>
+        <h1>Search</h1>
+        <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search by tag or author..." />
+          <button type="submit">Search</button>
+        </form>
+    
+        <section id="searchResults"></section>
+      </main>
+      
+        
        <script type="module">
         import { loadNav } from "/src/js/ui/global/nav.js";
         loadNav();

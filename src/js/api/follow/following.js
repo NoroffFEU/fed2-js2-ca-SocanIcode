@@ -1,18 +1,22 @@
-import { API_PROFILE_BY_NAME } from "@/js/constants.js";
-import { headers } from "@/js/headers.js";
+import { API_PROFILE_FOLLOW } from "../constants.js";
+import { API_PROFILE_UNFOLLOW } from "../constants";
+import { headers } from "../headers.js";
 
-export async function getFollowing(username) {
-  const res = await fetch(`${API_PROFILE_BY_NAME(username)}/following`, {
-    headers: headers(true)
+export async function getFollowing(users) {
+  const res = await fetch(API_PROFILE_FOLLOW, {
+    headers: headers(true),
   });
   if (!res.ok) throw new Error("Failed to get following list");
   return await res.json();
 }
 
-export async function unfollowUser(username) {
-  const res = await fetch(`${API_PROFILE_BY_NAME(username)}/unfollow`, {
+
+// this is for unfollower friend
+
+export async function unfollowUser(users) {
+  const res = await fetch(API_PROFILE_UNFOLLOW, {
     method: "PUT",
-    headers: headers()
+    headers: headers(true),
   });
   if (!res.ok) throw new Error("Failed to unfollow user");
   return await res.json();

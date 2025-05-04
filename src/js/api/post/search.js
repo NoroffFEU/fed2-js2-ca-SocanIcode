@@ -1,60 +1,29 @@
-import { API_BASE } from "../constants.js";
-
+import { API_PROFILE_SEARCH } from "../constants.js";
 import { headers } from "../headers.js";
 
-export async function searchPosts(query) {
-  const response = await fetch(`${API_BASE}/social/posts?q=${query}`);
+// search post by tag or author 
 
-  if (!response.ok) throw new Error("Search failed");
+export async function searchPosts({ tag = "", author = "" }) {
+  const url = new URL(API_PROFILE_SEARCH);
 
-  return await response.json();
-}
+  if (tag) url.searchParams.append("_tag", tag);
+  if (author) url.searchParams.append("_author", true); 
 
-// this for following list
-import { API_PROFILE_BY_NAME } from "@/js/constants.js";
-import { headers } from "@/js/headers.js";
-
-export async function getFollowing(username) {
-  const res = await fetch(`${API_PROFILE_BY_NAME(username)}/following`, {
-    headers: headers()
+  const res = await fetch(url, {
+    headers: headers(true),
   });
-  if (!res.ok) throw new Error("Failed to fetch following list");
-  return await res.json();
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch search results");
+  }
+
+  const result = await res.json();
+
+  if (author) {
+    return result.data.filter(post =>
+      post.author?.name?.toLowerCase().includes(author.toLowerCase())
+    );
+  }
+
+  return result.data;
 }
-
-// unfollow a user 
-export async function unfollowUser(username) {
-  const res = await fetch(`${API_PROFILE_BY_NAME(username)}/unfollow`, {
-    method: "PUT",
-    headers: headers()
-  });
-  if (!res.ok) throw new Error("Failed to unfollow");
-  return await res.json();
-}
-
-//write comments on a post
-export async function commentOnPost(postId, comment) {
-  const res = await fetch(`${API_POST_COMMENT(postId)}`, {
-    method: "POST",
-    headers: {
-      ...headers(),
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ body: comment })
-  });
-  if (!res.ok) throw new Error("Failed to comment");
-  return await res.json();
-}
-//React to a Post with Emoji
-export async function reactToPost(postId, emoji) {
-  const res = await fetch(`${API_POST_REACT(postId, emoji)}`, {
-    method: "PUT",
-    headers: headers()
-  });
-  if (!res.ok) throw new Error("Failed to react");
-  return await res.json();
-}
-
-
-
-

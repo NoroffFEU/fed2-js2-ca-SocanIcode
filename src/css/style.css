@@ -51,12 +51,12 @@ form input, form textarea, form button {
   border: none;
   border-radius: 3px;
  }
- form label{
-  color: #fff;
-  font-size: 1.2rem;
+ #searchForm input{
+  width:100px;
+  color:#ccc;
  }
-
-form button{
+form 
+button{
   background-color: #ff8052;
   border: 1px transparent;
   border-radius: 5px;
@@ -371,4 +371,20 @@ span {
   padding: 0.3rem 0.7rem;
   cursor: pointer;
 }
+
+
+/* emoji reaction */
+.emoji-btn.active {
+  filter: brightness(1.5);
+}
+.emoji-btn.heart.active {
+  color: red;
+}
+.emoji-btn.thumbs-up.active {
+  color: goldenrod;
+}
+.emoji-btn.laugh.active {
+  color: orange;
+}
+
 

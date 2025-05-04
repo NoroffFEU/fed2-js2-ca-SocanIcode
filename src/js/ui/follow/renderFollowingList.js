@@ -1,4 +1,7 @@
-async function renderFollowingList(username) {
+import { getFollowing, unfollowUser } from "@/js/api/follow/following.js";
+
+
+export async function renderFollowingList(username) {
   try {
     const { data: users } = await getFollowing(username);
     container.innerHTML = "";
