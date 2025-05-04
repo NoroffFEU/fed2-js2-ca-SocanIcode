@@ -1,5 +1,10 @@
 import { loginUser } from "../../api/auth/login.js";
 handleLoginForm();
+/**
+ * Handles login form submission.
+ * @param {Event} event - The form submit event.
+ */
+
 
 export function handleLoginForm() {
   const form = document.querySelector("#loginForm");

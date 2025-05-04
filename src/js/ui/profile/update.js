@@ -20,13 +20,15 @@ export async function setupProfileUpdate() {
 }
 
 /**
- * Renders user profile info to the page.
+ * Renders user profile 
  * @param {object} profile - Profile data from API.
  */
 function renderProfile(profile) {
   const profileContainer = document.getElementById("profileContainer");
-  const bannerContainer = document.getElementById("bannerContainer");
   const avatarContainer = document.getElementById("avatarContainer");
+  const bannerContainer = document.getElementById("bannerContainer");
+  const bannerUrl = "https://example.com/banner.jpg"; 
+  bannerContainer.style.backgroundImage = `url("${bannerUrl}")`;
 
   // Update banner
   if (bannerContainer) {
@@ -54,7 +56,7 @@ function renderProfile(profile) {
 
 
 /**
- * Sets up the profile update form toggle and submit.
+ * Sets up the profile update .
  */
 function setupForm(profile, username) {
   const form = document.getElementById("updateProfileForm");

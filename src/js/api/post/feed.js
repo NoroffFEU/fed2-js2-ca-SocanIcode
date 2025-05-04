@@ -2,9 +2,6 @@ import { API_POSTS_BASE } from "../constants.js";
 import { API_POST_COMMENT } from "../constants.js";
 import { API_DELETE_COMMENT } from "../constants.js";
 import { API_POST_REACT } from "../constants.js";
-
-
-
 import { headers } from "../headers.js";
 
 export async function fetchAllPosts() {
@@ -32,19 +29,6 @@ export async function postComment(postId, body) {
     body: JSON.stringify({ body }),
   });
   if (!res.ok) throw new Error("Failed to post comment");
-  return await res.json();
-}
-// comment deleting 
-export async function deleteComment(postId, commentId) {
-  const res = await fetch(API_DELETE_COMMENT(postId, commentId), {
-    method: "DELETE",
-    headers: headers(true),
-  });
-
-  if (!res.ok) {
-    throw new Error(`Failed to delete comment (${res.status})`);
-  }
-
   return await res.json();
 }
 

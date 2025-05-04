@@ -1,94 +1,96 @@
-Social Media App
-Welcome to the Noroff Social Media App — a simple frontend client for creating posts, following users, and managing profiles!
+#  Social Media App: Ingera Diary
 
-🚀 Project Setup
-Clone this repo
+Welcome to the Noroff Social Media App — a simple frontend client for creating posts, following users, and managing profiles! I have create using fitctional app called ingera dairy.
 
-bash
-Copy
-Edit
-git clone [your-repo-link]
-cd [your-project-folder]
-Install dependencies (if using Vite)
+---
 
-bash
-Copy
-Edit
+## 🚀 Project Setup
+
+### Clone this repo
+```bash
+git clone [https://github.com/NoroffFEU/fed2-js2-ca-SocanIcode.git]
+cd [https://fed2-js2-ca-socanicode.netlify.app/]
+```
+
+### Install dependencies (if using Vite)
+```bash
 npm install
-Run locally
+```
 
-bash
-Copy
-Edit
+### Run locally
+```bash
 npm run dev
-or open the index.html directly in your browser if not using Vite.
+```
+Or simply open `index.html` directly in your browser if you're not using Vite.
 
-📂 Project Structure
-pgsql
-Copy
-Edit
+---
+
+## 📂 Project Structure
+```
 ├── auth/
-│   ├── login/
-│   └── register/
+│   ├── login/index.html
+│   └── register/index.html
+├── follow/
+│   ├── followers/
+│   └── friends/
 ├── post/
 │   ├── create/
 │   └── edit/
 ├── profile/
 ├── public/
 │   └── images/
+├── search/
+├── setting/
+├── notification/
 ├── src/
 │   ├── css/
 │   └── js/
 ├── index.html
 ├── package.json
 └── vite.config.js
-auth/ → Login and Register pages
+```
 
-post/ → Create and Edit Posts
+### Folder Highlights:
+- `auth/` → Login and Register pages
+- `post/` → Create and Edit Posts
+- `profile/` → User Profile page
+- `public/images/` → Static assets
+- `src/css/` → Stylesheets
+- `src/js/` → JavaScript modules
 
-profile/ → User Profile page
+---
 
-public/images/ → Static images
+## 🔗 Live Demo
+Deployed here: [https://fed2-js2-ca-socanicode.netlify.app/]
 
-src/css/ → Stylesheets
+---
 
-src/js/ → JavaScript modules
+## 🛠️ Built With
+- HTML5
+- CSS3
+- JavaScript (ES6 modules)
+- Noroff API
 
-🔗 Live Demo
-Deployed here: [Insert Netlify/Vercel/GitHub Pages link]
+---
 
-🛠️ Built With
-HTML5
+## 📚 Features
+- Register and login users
+- Create, edit, delete posts
+- View all posts and search posts
+- Follow and unfollow users
+- View personal profile
+- Mobile responsive design
 
-CSS3
+---
 
-JavaScript (ES6 modules)
+## ✅ Requirements Checklist
+- [x] ES6 Modules
+- [x] JSDocs for major functions
+- [x] Basic UI
+- [x] GitHub Pages / Netlify deployment
+- [x] README.md file
 
-Noroff API
+---
 
-📚 Features
-Register and login users
-
-Create, edit, delete posts
-
-View all posts and search posts
-
-Follow and unfollow users
-
-View personal profile
-
-Mobile responsive design
-
-✅ Requirements Checklist
- ES6 Modules
-
- JSDocs for major functions
-
- Basic UI
-
- GitHub Pages / Netlify / Vercel Deployment
-
- README.md file
-
-📜 License
+## 📜 License
 This project is open-sourced for educational purposes.

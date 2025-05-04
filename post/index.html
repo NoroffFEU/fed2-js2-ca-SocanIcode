@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Post</title>
+    <title>single post view</title>
      <link rel="stylesheet" href="../src/css/style.css" />
     <link rel="stylesheet" href="../src/css/_reset.css" /> 
      <link
@@ -19,13 +19,28 @@
     <header>
       <div id="nav"></div>
     </header>
-    <h2>Edit Post</h2>
-    <form id="editPostForm">
-      <input type="text" id="editTitle" placeholder="Title" required />
-      <textarea id="editBody" placeholder="Edit your post..." required></textarea>
-      <button type="submit">Save Changes</button>
-    </form>
   
+    <main  class="feed-container">
+      <div id="postDetail"></div>
+    
+      <section class="reactions" id="reactionsContainer"></section>
+    
+      <section class="comments-section">
+        <h2>Comments</h2>
+        <div id="commentsContainer"></div>
+    
+        <form id="commentForm">
+         </form>
+      </section>
+    </main>
+    
+    <script type="module" src="/src/js/ui/post/singlePostRead.js"></script>
+    
+    
+    <script type="module">
+      import { loadNav } from "/src/js/ui/global/nav.js";
+      loadNav();
+    </script>
 
   </body>
   </html>

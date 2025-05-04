@@ -1,4 +1,9 @@
 import { updatePost } from '/src/js/api/post/update.js';
+/**
+ * Handles editing post .
+ * @param {Event} event - The form submit event.
+ */
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.querySelector("#editPostForm");

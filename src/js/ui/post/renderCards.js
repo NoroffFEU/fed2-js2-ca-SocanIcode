@@ -1,35 +1,46 @@
 
 import { fetchAllPosts, postComment, reactToPost } from "@/js/api/post/feed.js";
-
+import {deleteComment } from "@/js/api/post/delete.js";
+/**
+ * Renders  post card inside the specified container.
+ * @param {Object} post - The post object to render.
+ * @param {HTMLElement} container - The container element to append the card to.
+ */
 
 export function renderPostCard(post, container) {
   const card = document.createElement("div");
   card.classList.add("post-box");
 
   card.innerHTML = `
+  <a href="/post/index.html?id=${post.id}" class="post-link">
     <h3>${post.title}</h3>
     <img src="${post.media?.url || "#"}" alt="${post.media?.alt || "image"}" />
     <p>${post.body}</p>
-    <button class="edit-post" data-id="${post.id}">Edit</button>
-    <button class="delete-post" data-id="${post.id}">Delete</button>
+  </a>
 
-     <form class="comment-form" data-id="${post.id}">
+  <button class="edit-post" data-id="${post.id}">Edit</button>
+  <button class="delete-post" data-id="${post.id}">Delete</button>
+
+  <form class="comment-form" data-id="${post.id}">
     <input type="text" placeholder="Add comment" />
-    <button type="submit"><i class="fa-solid fa-comment"></i></button>
+    <button type="submit"><i class="fa-solid fa-square-arrow-up-right"></i></button>
   </form>
 
-<div class="reaction-buttons" data-id="${post.id}">
-  <button data-emoji="thumbsUp" class="emoji-btn thumbs-up">👍 <span class="count">${post._count?.reactions || 0}</span></button>
-  <button data-emoji="thumbsDown" class="emoji-btn thumbs-down">👎 <span class="count">${post._count?.reactions || 0}</span></button>
-  <button data-emoji="heart" class="emoji-btn heart">❤️ <span class="count">${post._count?.reactions || 0}</span></button>
-  <button data-emoji="laugh" class="emoji-btn laugh">😂 <span class="count">${post._count?.reactions || 0}</span></button>
-</div>
+  <div class="reaction-buttons" data-id="${post.id}">
+    <button data-emoji="thumbsUp" class="emoji-btn thumbs-up">👍 <span class="count">${post._count?.reactions || 0}</span></button>
+    <button data-emoji="thumbsDown" class="emoji-btn thumbs-down">👎 <span class="count">${post._count?.reactions || 0}</span></button>
+    <button data-emoji="heart" class="emoji-btn heart">❤️ <span class="count">${post._count?.reactions || 0}</span></button>
+    <button data-emoji="laugh" class="emoji-btn laugh">😂 <span class="count">${post._count?.reactions || 0}</span></button>
+  </div>
+`;
 
-  `;
-
-  container.prepend(card);
+  container.appendChild(card);
 }
-
+/**
+ * Renders the entire post feed and attaches event listeners to each post card.
+ * Also handles new post rendering and post interaction (edit, delete, comment, react).
+ * @async
+ */
 export async function renderFeed() {
   const container = document.getElementById("post-box");
   container.innerHTML = "";
@@ -45,6 +56,7 @@ export async function renderFeed() {
   try {
     const { data: posts } = await fetchAllPosts();
      posts.forEach(post => renderPostCard(post, container));
+     
 
     // Edit page 
     document.querySelectorAll(".edit-post").forEach(btn => {
@@ -120,7 +132,7 @@ function renderComment(comment, postId, container) {
   });
 }
 
-// Handling the reaction reactions
+// Handling the  reactions
 document.querySelectorAll(".reaction-buttons button").forEach(button => {
   button.addEventListener("click", async (e) => {
     const btn = e.currentTarget;

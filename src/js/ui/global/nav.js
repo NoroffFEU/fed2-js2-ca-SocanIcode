@@ -1,5 +1,5 @@
 /**
- * Dynamically loads the  navigation bar into the pages.
+ * Dynamically loads the  nav bar into the pages.
  * Redirects on logo click based on current page.
  */
 export function loadNav() {
@@ -44,8 +44,11 @@ const navInput = document.getElementById("navSearchInput");
     currentPath === "/index"
   ) {
     logo.addEventListener("click", () => {
-      alert("Welcome to SocialMedia! Register to get started.");
-      window.location.href = "/index.html";
+      if (!localStorage.getItem("welcomeShown")) {
+        alert("Welcome to Ingera Diary! Register to get started.");
+        localStorage.setItem("welcomeShown", "true");
+      }
+      window.location.href = "/auth/index.html";
     });
   } else {
     logo.addEventListener("click", () => {

@@ -1,5 +1,10 @@
 import { registerUser} from "../../api/auth/register.js";
 handleRegisterForm();
+/**
+ * Handles login form submission.
+ * @param {Event} event - The form submit event.
+ */
+
 
 //  REGISTER
 export function handleRegisterForm() {

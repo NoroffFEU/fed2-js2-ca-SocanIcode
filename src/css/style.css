@@ -19,7 +19,8 @@ header {
   padding: 30px;
   border-bottom: 1px solid #ccc;
   box-shadow: 0 8px 16px rgba(223, 137, 137, 0.3); 
-  z-index: 1000; 
+  z-index
+  : 1000; 
 }
 
 nav a {
@@ -28,6 +29,7 @@ nav a {
   flex-direction: column;
  
 }
+
 
 .welcome{
   display: inline;
@@ -46,6 +48,10 @@ form input, form textarea, form button {
   
   
 }
+ .auth form label{
+  color: #dee2eb;
+  font-weight: 600;
+}
  form input{
   background-color: #f0eaeaa9;
   border: none;
@@ -55,7 +61,7 @@ form input, form textarea, form button {
   width:100px;
   color:#ccc;
  }
-form 
+.auth form 
 button{
   background-color: #ff8052;
   border: 1px transparent;
@@ -63,33 +69,32 @@ button{
   margin-top: 2rem;
   font-size: 1.5rem;
   font-weight: 600;
+  color: #fff;
+  padding: 1.2rem;
+  
+}
+
+.wrapperBox form button{
+  background-color: #d4d4d4;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #5c59fc;
+  padding: 1.2rem;
+  border-radius: 5px;
   
 }
 form button:hover{
   background-color:#f88d65 ;
 
 }
+
+
 #updateProfileForm{
   display: none;
 }
 
-.auth {
-  background-image: url("/public/images/banner-image.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh; 
-  padding: 2rem; 
-  justify-content: center;
-  align-items: center;
-}
-.auth {
-  position: relative; 
-  background-image: url("/public/images/banner-image.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid #ff8052;
+.wrapper{
+
   min-height: 100vh;
   padding: 2rem;
   display: flex;
@@ -98,6 +103,28 @@ form button:hover{
   flex-direction: column;
   line-height: 22px;
   overflow: hidden; 
+}
+.wrapperBox {
+  display: flex; /* Important: remove 'none' if you want to see it */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers vertically if parent has height */
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 1rem auto;
+  text-align: center;
+}
+.wrapperBox a:hover{
+  color: #ff8052;
+}
+.auth {
+  position: relative; 
+  background-image: url("/public/images/banner-image.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #ff8052;
+  
 }
 
 /* Overlay */
@@ -278,50 +305,81 @@ span {
   justify-content: space-between;
 }
 
-/** profile page */
-#profileContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 30vh;
+/** profile page  style*/
+
+
+.wrapperContainer {
+  width: 100%;
+  padding: 5rem;
+  
 }
 
-/* profile page */
 #bannerContainer {
   width: 100%;
-  height: 25vh;
-  position: relative;
-  overflow: hidden;
-}
+  height:25vh;
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top:3rem;
+  box-shadow:0 4px 10px rgb(5, 27, 73, 0.2); 
+  ;
+ }
 
-#profileBanner {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+/* Avatar below banner */
 #avatarContainer {
-  position: absolute;
-  top: 15vh; /* slightly overlaps the banner */
-  right: 2rem;
-  z-index: 2;
-}
-
-#profileAvatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  overflow: hidden;
+  position: fixed;
+  margin: -100px auto 1rem;
+  border: 3px solid #cdcf49;
+}
+
+#avatarContainer img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-#profileContainer {
-  position: relative;
-  margin-top: 2rem;
-  padding-top: 10vh;
+/* Username and bio */
+#username {
+  text-align: left;
+  font-size: 1.5rem;
+  margin: 0;
 }
+
+#profileBio {
+  text-align: left;
+  font-size: 1rem;
+  color: #666;
+}
+
+ #profile-setting a{
+  text-align: left;
+  font-size: 1rem;
+}
+
+#profileInfo {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#profileInfo a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  gap: 3rem;
+}
+#profileInfo a :hover{
+  color: #5c59fc;
+}
+
+
+
 
 /* feed page*/
 .feed-container {
@@ -388,3 +446,92 @@ span {
 }
 
 
+@media (max-width: 768px) {
+  body {
+    margin: 10px;
+  }
+
+  header, .main-nav {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav {
+    gap: 1rem;
+  }
+
+  .nav-left, .nav-center, .nav-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-center {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0.25rem 0;
+  }
+
+  .feed-container {
+    padding: 1rem;
+  }
+
+  .post-box {
+    padding: 1rem;
+  }
+
+  .wrapperBox, #profileContainer, .auth {
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    padding: 1rem;
+  }
+
+  form input, form textarea, form button {
+    padding: 0.75rem 1rem;
+  }
+
+  #bannerContainer {
+    height: 20vh;
+  }
+
+  #avatarContainer {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: -60px auto 1rem;
+  }
+
+  #username, #profileBio {
+    text-align: center;
+  }
+
+  #profileInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .auth h1, .auth h2, .auth p, .auth a {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .auth a {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .app-welcomepage {
+    margin-top: 20vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
