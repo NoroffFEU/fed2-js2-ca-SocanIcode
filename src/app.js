@@ -1,5 +1,25 @@
-import "./css/style.css";
+// this is what I added
+import { getAllPosts } from "./feed.js";
+getAllPosts();
 
-import router from "./js/router";
+const feedContainer = document.getElementById("#feed");
 
-await router(window.location.pathname);
+if (feedContainer) {
+  getAllPosts(feedContainer);
+}
+const searchInput = document.getElementById("#searchInput");
+
+if (feedContainer) {
+  getAllPosts(feedContainer);
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", (e) => {
+    const query = e.target.value;
+    if (query.length > 2) {
+      searchPosts(query);
+    } else {
+      getAllPosts(feedContainer);
+    }
+  });
+}

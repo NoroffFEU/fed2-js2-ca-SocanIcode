@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/_reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="nav"></div>
+    </header>
+    <main>
+      <div id="settingsinput" class="wrapper">
+        <h1>Setting</h1>
+        <div class="wrapperBox">
+          <a href="../profile/index.html">Profile</a>
+          <a href="../notifications/index.html">Notifications</a>
+          <a
+            href="../follow/followers.html"
+            id="followingButton"
+            data-action="follow"
+            >Following</a
+          >
+          <a
+            href="../follow/following/bffdairy.html"
+            id="followersButton"
+            data-action="follow"
+            ><i class="fa-solid fa-user-group"></i>BFF Dairy</a
+          >
+          <a href=".././follow/following/lockdairy.html">
+            <i class="fa-solid fa-user-lock"></i>Lock Dairy</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- script start here-->
+
+    <script type="module">
+      import { loadNav } from "/src/js/ui/global/nav.js";
+      loadNav();
+    </script>
+  </body>
+</html>

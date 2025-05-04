@@ -1,1 +1,537 @@
-@import url(_reset.css);
+@import "./_reset.css";
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+nav,
+form {
+  margin-bottom: 20px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #101010;
+  padding: 30px;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(223, 137, 137, 0.3);
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  flex-direction: column;
+}
+
+.welcome {
+  display: inline;
+}
+
+form input,
+form textarea,
+form button {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem 10rem;
+  box-sizing: border-box;
+}
+.auth form label {
+  color: #dee2eb;
+  font-weight: 600;
+}
+form input {
+  background-color: #f0eaeaa9;
+  border: none;
+  border-radius: 3px;
+}
+#searchForm input {
+  width: 100px;
+  color: #ccc;
+}
+.auth form button {
+  background-color: #ff8052;
+  border: 1px transparent;
+  border-radius: 5px;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1.2rem;
+}
+
+.wrapperBox form button {
+  background-color: #d4d4d4;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #5c59fc;
+  padding: 1.2rem;
+  border-radius: 5px;
+}
+form button:hover {
+  background-color: #f88d65;
+}
+
+#updateProfileForm {
+  display: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 22px;
+  overflow: hidden;
+}
+.wrapperBox {
+  display: flex; /* Important: remove 'none' if you want to see it */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers vertically if parent has height */
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 1rem auto;
+  text-align: center;
+}
+.wrapperBox a:hover {
+  color: #ff8052;
+}
+.auth {
+  position: relative;
+  background-image: url("/public/images/banner-image.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #ff8052;
+}
+
+/* Overlay */
+.auth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.auth > * {
+  position: relative;
+  z-index: 2;
+}
+.auth h1 {
+  color: #cdcf49;
+  font-size: 2rem;
+}
+.auth h2 {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.auth p {
+  color: #fff;
+  padding: 12px;
+}
+.auth a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+  width: 200px;
+  padding: 1rem;
+  margin: 20px;
+  border: 1px solid #cdcf4983;
+  text-decoration: none;
+}
+
+.auth a:hover {
+  background-color: #47474777;
+  color: #ccc;
+}
+.auth .no-border {
+  border: none;
+  font-size: 1rem;
+  color: #f777c6;
+  padding: 10px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+span {
+  color: red;
+  font-weight: bold;
+}
+
+.app-welcomepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30vh;
+  background-image: url(../../public/images/Sauber\ Rot\ YouTube-Banner.png);
+}
+
+/* nav styling */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #101010;
+  padding: 20px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.main-nav a {
+  color: #fff;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: #ffd700;
+}
+
+#nav-logo {
+  height: 50px;
+  cursor: pointer;
+}
+.nav-left h1 {
+  color: #cdcf49;
+  font-size: 1.2rem;
+}
+.nav-left p {
+  color: #fff;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-center a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.nav-center a:hover::after,
+.nav-center a.active::after {
+  width: 100%;
+}
+
+.nav-right img {
+  height: 26px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #fff;
+}
+
+.feed-container {
+  padding: 3rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.post-card .meta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+/** profile page  style*/
+
+.wrapperContainer {
+  width: 100%;
+  padding: 5rem;
+}
+
+#bannerContainer {
+  width: 100%;
+  height: 25vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-top: 3rem;
+  box-shadow: 0 4px 10px rgb(5, 27, 73, 0.2);
+}
+
+/* Avatar below banner */
+#avatarContainer {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: fixed;
+  margin: -100px auto 1rem;
+  border: 3px solid #cdcf49;
+}
+
+#avatarContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Username and bio */
+#username {
+  text-align: left;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#profileBio {
+  text-align: left;
+  font-size: 1rem;
+  color: #666;
+}
+
+#profile-setting a {
+  text-align: left;
+  font-size: 1rem;
+}
+
+#profileInfo {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#profileInfo a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  gap: 3rem;
+}
+#profileInfo a :hover {
+  color: #5c59fc;
+}
+
+/* feed page*/
+.feed-container {
+  padding: 2rem;
+}
+
+.post-box {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+/* following list style*/
+.follow-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.unfollow-btn {
+  margin-left: auto;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
+.comment-form button {
+  background-color: #f7f1f1;
+  color: black;
+  border: none;
+  padding: 5px 5px;
+  transition: none;
+}
+
+.comment-form button:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+/* emoji reaction */
+.emoji-btn.active {
+  filter: brightness(1.5);
+}
+.emoji-btn.heart.active {
+  color: red;
+}
+.emoji-btn.thumbs-up.active {
+  color: goldenrod;
+}
+.emoji-btn.laugh.active {
+  color: orange;
+}
+
+/* small screen hview point*/
+
+@media (max-width: 768px) {
+  body {
+    margin: 10px;
+  }
+
+  header,
+  .main-nav {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav {
+    gap: 1rem;
+  }
+
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-center {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    display: block;
+    margin: 0.25rem 0;
+  }
+
+  .feed-container {
+    padding: 1rem;
+  }
+
+  .post-box {
+    padding: 1rem;
+  }
+
+  .wrapperBox,
+  #profileContainer,
+  .auth {
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    padding: 1rem;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    padding: 0.75rem 1rem;
+  }
+
+  #bannerContainer {
+    height: 20vh;
+  }
+
+  #avatarContainer {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: -60px auto 1rem;
+  }
+
+  #username,
+  #profileBio {
+    text-align: center;
+  }
+
+  #profileInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .auth h1,
+  .auth h2,
+  .auth p,
+  .auth a {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .auth a {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .app-welcomepage {
+    margin-top: 20vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
