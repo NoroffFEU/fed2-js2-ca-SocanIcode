@@ -1,16 +1,16 @@
-
-@import './_reset.css';
+@import "./_reset.css";
 
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
 }
 
- nav, form {
+nav,
+form {
   margin-bottom: 20px;
 }
 header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -18,51 +18,45 @@ header {
   background-color: #101010;
   padding: 30px;
   border-bottom: 1px solid #ccc;
-  box-shadow: 0 8px 16px rgba(223, 137, 137, 0.3); 
-  z-index
-  : 1000; 
+  box-shadow: 0 8px 16px rgba(223, 137, 137, 0.3);
+  z-index: 1000;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
   flex-direction: column;
- 
 }
 
-
-.welcome{
+.welcome {
   display: inline;
 }
 
-
-
-form input, form textarea, form button {
+form input,
+form textarea,
+form button {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   width: 100%;
   max-width: 400px;
   padding: 1rem 10rem;
   box-sizing: border-box;
-  
-  
 }
- .auth form label{
+.auth form label {
   color: #dee2eb;
   font-weight: 600;
 }
- form input{
+form input {
   background-color: #f0eaeaa9;
   border: none;
   border-radius: 3px;
- }
- #searchForm input{
-  width:100px;
-  color:#ccc;
- }
-.auth form 
-button{
+}
+#searchForm input {
+  width: 100px;
+  color: #ccc;
+}
+.auth form button {
   background-color: #ff8052;
   border: 1px transparent;
   border-radius: 5px;
@@ -71,30 +65,25 @@ button{
   font-weight: 600;
   color: #fff;
   padding: 1.2rem;
-  
 }
 
-.wrapperBox form button{
+.wrapperBox form button {
   background-color: #d4d4d4;
   font-size: 1.2rem;
   font-weight: 400;
   color: #5c59fc;
   padding: 1.2rem;
   border-radius: 5px;
-  
 }
-form button:hover{
-  background-color:#f88d65 ;
-
+form button:hover {
+  background-color: #f88d65;
 }
 
-
-#updateProfileForm{
+#updateProfileForm {
   display: none;
 }
 
-.wrapper{
-
+.wrapper {
   min-height: 100vh;
   padding: 2rem;
   display: flex;
@@ -102,7 +91,7 @@ form button:hover{
   align-items: center;
   flex-direction: column;
   line-height: 22px;
-  overflow: hidden; 
+  overflow: hidden;
 }
 .wrapperBox {
   display: flex; /* Important: remove 'none' if you want to see it */
@@ -114,17 +103,16 @@ form button:hover{
   margin: 1rem auto;
   text-align: center;
 }
-.wrapperBox a:hover{
+.wrapperBox a:hover {
   color: #ff8052;
 }
 .auth {
-  position: relative; 
+  position: relative;
   background-image: url("/public/images/banner-image.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #ff8052;
-  
 }
 
 /* Overlay */
@@ -135,10 +123,9 @@ form button:hover{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 1; 
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
-
 
 .auth > * {
   position: relative;
@@ -148,39 +135,38 @@ form button:hover{
   color: #cdcf49;
   font-size: 2rem;
 }
-.auth h2{
+.auth h2 {
   color: #fff;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: bolder;
-
 }
 
-.auth p{
-  color: #fff;  
+.auth p {
+  color: #fff;
   padding: 12px;
 }
-.auth a{
+.auth a {
   color: #fff;
   font-size: 1.5rem;
   font-weight: bolder;
   text-align: center;
   width: 200px;
-  padding: 1rem ;
+  padding: 1rem;
   margin: 20px;
   border: 1px solid #cdcf4983;
   text-decoration: none;
 }
 
-.auth a:hover{
+.auth a:hover {
   background-color: #47474777;
   color: #ccc;
 }
 .auth .no-border {
-border: none;
-font-size: 1rem;
-color: #f777c6;
-padding: 10px;
+  border: none;
+  font-size: 1rem;
+  color: #f777c6;
+  padding: 10px;
 }
 
 .post {
@@ -190,18 +176,17 @@ padding: 10px;
 }
 
 span {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
 
-.app-welcomepage{
+.app-welcomepage {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 30vh;
-  background-image: url(../../public/images/Sauber\ Rot\ YouTube-Banner.png)
-  
+  background-image: url(../../public/images/Sauber\ Rot\ YouTube-Banner.png);
 }
 
 /* nav styling */
@@ -218,24 +203,23 @@ span {
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
-.main-nav a{
+.main-nav a {
   color: #fff;
 }
 .main-nav a:hover,
 .main-nav a.active {
-  color: #ffd700; 
+  color: #ffd700;
 }
 
-#nav-logo{
-  height:50px; 
+#nav-logo {
+  height: 50px;
   cursor: pointer;
 }
-.nav-left h1{
-    color: #cdcf49;
+.nav-left h1 {
+  color: #cdcf49;
   font-size: 1.2rem;
-
 }
-.nav-left p{
+.nav-left p {
   color: #fff;
   line-height: 30px;
   font-size: 12px;
@@ -247,13 +231,12 @@ span {
 }
 
 .nav-center a {
-   text-decoration: none;
+  text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   position: relative;
   transition: color 0.3s;
 }
-
 
 .nav-center a::after {
   content: "";
@@ -290,7 +273,7 @@ span {
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .post-card h3 {
@@ -307,24 +290,21 @@ span {
 
 /** profile page  style*/
 
-
 .wrapperContainer {
   width: 100%;
   padding: 5rem;
-  
 }
 
 #bannerContainer {
   width: 100%;
-  height:25vh;
+  height: 25vh;
   background-size: cover;
-  background-position:center;
+  background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
-  margin-top:3rem;
-  box-shadow:0 4px 10px rgb(5, 27, 73, 0.2); 
-  ;
- }
+  margin-top: 3rem;
+  box-shadow: 0 4px 10px rgb(5, 27, 73, 0.2);
+}
 
 /* Avatar below banner */
 #avatarContainer {
@@ -356,7 +336,7 @@ span {
   color: #666;
 }
 
- #profile-setting a{
+#profile-setting a {
   text-align: left;
   font-size: 1rem;
 }
@@ -374,12 +354,9 @@ span {
   font-weight: bold;
   gap: 3rem;
 }
-#profileInfo a :hover{
+#profileInfo a :hover {
   color: #5c59fc;
 }
-
-
-
 
 /* feed page*/
 .feed-container {
@@ -392,7 +369,7 @@ span {
   padding: 1rem;
   margin-bottom: 1.5rem;
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .post-box img {
@@ -430,7 +407,18 @@ span {
   cursor: pointer;
 }
 
+.comment-form button {
+  background-color: #f7f1f1;
+  color: black;
+  border: none;
+  padding: 5px 5px;
+  transition: none;
+}
 
+.comment-form button:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
 /* emoji reaction */
 .emoji-btn.active {
   filter: brightness(1.5);
@@ -445,13 +433,15 @@ span {
   color: orange;
 }
 
+/* small screen hview point*/
 
 @media (max-width: 768px) {
   body {
     margin: 10px;
   }
 
-  header, .main-nav {
+  header,
+  .main-nav {
     padding: 1rem;
     flex-direction: column;
     text-align: center;
@@ -461,7 +451,9 @@ span {
     gap: 1rem;
   }
 
-  .nav-left, .nav-center, .nav-right {
+  .nav-left,
+  .nav-center,
+  .nav-right {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
@@ -485,7 +477,9 @@ span {
     padding: 1rem;
   }
 
-  .wrapperBox, #profileContainer, .auth {
+  .wrapperBox,
+  #profileContainer,
+  .auth {
     padding: 1rem;
     margin: 0 auto;
   }
@@ -494,7 +488,9 @@ span {
     padding: 1rem;
   }
 
-  form input, form textarea, form button {
+  form input,
+  form textarea,
+  form button {
     padding: 0.75rem 1rem;
   }
 
@@ -509,7 +505,8 @@ span {
     margin: -60px auto 1rem;
   }
 
-  #username, #profileBio {
+  #username,
+  #profileBio {
     text-align: center;
   }
 
@@ -519,7 +516,10 @@ span {
     gap: 0.5rem;
   }
 
-  .auth h1, .auth h2, .auth p, .auth a {
+  .auth h1,
+  .auth h2,
+  .auth p,
+  .auth a {
     font-size: 1rem;
     padding: 0.5rem;
   }

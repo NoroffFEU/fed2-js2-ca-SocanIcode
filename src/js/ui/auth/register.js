@@ -1,10 +1,9 @@
-import { registerUser} from "../../api/auth/register.js";
+import { registerUser } from "../../api/auth/register.js";
 handleRegisterForm();
 /**
  * Handles login form submission.
  * @param {Event} event - The form submit event.
  */
-
 
 //  REGISTER
 export function handleRegisterForm() {
@@ -16,13 +15,11 @@ export function handleRegisterForm() {
 
     const formData = new FormData(e.target);
     const userInfo = Object.fromEntries(formData.entries());
-    
 
     try {
       const result = await registerUser(userInfo);
       console.log("API response:", result);
-      
-  
+
       if (res.ok) {
         alert("✅ Registered! Redirecting to login...");
         window.location.href = "/auth/login/index.html";
@@ -36,4 +33,3 @@ export function handleRegisterForm() {
   });
 }
 handleRegisterForm();
-

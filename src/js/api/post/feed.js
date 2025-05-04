@@ -1,15 +1,16 @@
 import { API_POSTS_BASE } from "../constants.js";
 import { API_POST_COMMENT } from "../constants.js";
-import { API_DELETE_COMMENT } from "../constants.js";
 import { API_POST_REACT } from "../constants.js";
 import { headers } from "../headers.js";
 
 export async function fetchAllPosts() {
-  return fetch(`${API_POSTS_BASE}?_author=true&_comments=true&_reactions=true`, {
-    headers: headers(true),
-  }).then(res => res.json());
+  return fetch(
+    `${API_POSTS_BASE}?_author=true&_comments=true&_reactions=true`,
+    {
+      headers: headers(true),
+    },
+  ).then((res) => res.json());
 }
-
 
 // Get all comments for a post
 export async function fetchComments(postId) {
@@ -32,13 +33,13 @@ export async function postComment(postId, body) {
   return await res.json();
 }
 
-
 // React with emoji
 export async function reactToPost(postId, emoji) {
-  const url = API_POST_REACT(postId, emoji);
+  const url = API_POST_REACT(postId, emoji); // Use both postId and emoji
+
   const res = await fetch(url, {
     method: "PUT",
-    headers: headers(true), 
+    headers: headers(true),
   });
 
   if (!res.ok) {

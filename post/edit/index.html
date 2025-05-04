@@ -2,25 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Update your story on Ingera Diary. Edit your posts to reflect new thoughts, moments, and insights — because your voice evolves.">
+    <meta
+      name="description"
+      content="Update your story on Ingera Diary. Edit your posts to reflect new thoughts, moments, and insights — because your voice evolves."
+    />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit post</title>   <link rel="stylesheet" href="../../src/css/style.css" />
-    <link rel="stylesheet" href="../../src/css/style.css" /> 
-     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-</head>
+    <title>Edit post</title>
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
   <body>
     <header>
       <div id="nav"></div>
     </header>
-    <main  class="wrapper">
+    <main class="wrapper">
       <h1>Edit Post</h1>
       <form id="editPostForm" class="wrapperBox">
         <input name="title" placeholder="Title" required />
@@ -28,13 +32,12 @@
         <input name="tags" placeholder="Comma-separated tags" />
         <input name="media" placeholder="Image URL" />
         <input name="mediaAlt" placeholder="Image alt text" />
-        <button type="submit"  class="wrapperButton">Update Post</button>
+        <button type="submit" class="wrapperButton">Update Post</button>
       </form>
     </main>
-    
+
     <script type="module" src="/src/js/ui/post/update.js"></script>
-    
-    
+
     <script type="module">
       import { loadNav } from "/src/js/ui/global/nav.js";
       loadNav();

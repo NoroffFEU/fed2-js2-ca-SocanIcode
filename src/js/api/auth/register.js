@@ -1,8 +1,8 @@
- import { API_AUTH_REGISTER } from "../constants.js";
+import { API_AUTH_REGISTER } from "../constants.js";
 import { headers } from "../headers.js";
 
 /**
- * Sends a login request to the API.
+ * Sends a register request to the API.
  * @param {Object} userInfo - Contains required Username, email and password.
  * @returns {Promise<Object>} Parsed JSON response.
  */
@@ -21,4 +21,3 @@ export async function registerUser(userData) {
 
   return result;
 }
-

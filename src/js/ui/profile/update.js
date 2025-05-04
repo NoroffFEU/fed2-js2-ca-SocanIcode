@@ -20,14 +20,14 @@ export async function setupProfileUpdate() {
 }
 
 /**
- * Renders user profile 
+ * Renders user profile
  * @param {object} profile - Profile data from API.
  */
 function renderProfile(profile) {
   const profileContainer = document.getElementById("profileContainer");
   const avatarContainer = document.getElementById("avatarContainer");
   const bannerContainer = document.getElementById("bannerContainer");
-  const bannerUrl = "https://example.com/banner.jpg"; 
+  const bannerUrl = "https://example.com/banner.jpg";
   bannerContainer.style.backgroundImage = `url("${bannerUrl}")`;
 
   // Update banner
@@ -54,7 +54,6 @@ function renderProfile(profile) {
   }
 }
 
-
 /**
  * Sets up the profile update .
  */
@@ -73,7 +72,6 @@ function setupForm(profile, username) {
 
   // Hide form by default
   form.style.display = "none";
-
 
   editBtn.addEventListener("click", () => {
     form.style.display = "block";
@@ -99,16 +97,15 @@ function setupForm(profile, username) {
     try {
       await updateProfile(username, updates);
       alert(" Profile updated!");
-      renderProfile({ ...profile, ...updates }); 
+      renderProfile({ ...profile, ...updates });
       form.style.display = "none";
       editBtn.style.display = "inline-block";
-      location.reload(); 
+      location.reload();
     } catch (error) {
       console.error("Update error:", error);
       alert(error.message || "Failed to update profile.");
     }
   });
 }
-
 
 setupProfileUpdate();

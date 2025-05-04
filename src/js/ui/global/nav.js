@@ -36,7 +36,7 @@ export function loadNav() {
 
   const logo = document.getElementById("nav-logo");
   const navForm = document.getElementById("navSearchForm");
-const navInput = document.getElementById("navSearchInput");
+  const navInput = document.getElementById("navSearchInput");
 
   if (
     currentPath === "/" ||
@@ -56,11 +56,11 @@ const navInput = document.getElementById("navSearchInput");
     });
 
     navForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const query = navInput.value.trim();
-  if (query) {
-    window.location.href = `/search.html?query=${encodeURIComponent(query)}`;
-  }
-});
+      e.preventDefault();
+      const query = navInput.value.trim();
+      if (query) {
+        window.location.href = `/search.html?query=${encodeURIComponent(query)}`;
+      }
+    });
   }
 }

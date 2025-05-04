@@ -21,7 +21,7 @@ async function runSearch(query) {
 
   results.innerHTML = "";
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     const div = document.createElement("div");
     div.className = "post-box";
     div.innerHTML = `

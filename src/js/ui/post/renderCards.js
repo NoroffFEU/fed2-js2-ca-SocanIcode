@@ -1,6 +1,8 @@
 
 import { fetchAllPosts, postComment, reactToPost } from "@/js/api/post/feed.js";
-import {deleteComment } from "@/js/api/post/delete.js";
+import { deletePost,} from "@/js/api/post/delete.js";
+
+
 /**
  * Renders  post card inside the specified container.
  * @param {Object} post - The post object to render.
@@ -23,7 +25,7 @@ export function renderPostCard(post, container) {
 
   <form class="comment-form" data-id="${post.id}">
     <input type="text" placeholder="Add comment" />
-    <button type="submit"><i class="fa-solid fa-square-arrow-up-right"></i></button>
+    <button type="submit">send</button>
   </form>
 
   <div class="reaction-buttons" data-id="${post.id}">
@@ -32,15 +34,19 @@ export function renderPostCard(post, container) {
     <button data-emoji="heart" class="emoji-btn heart">❤️ <span class="count">${post._count?.reactions || 0}</span></button>
     <button data-emoji="laugh" class="emoji-btn laugh">😂 <span class="count">${post._count?.reactions || 0}</span></button>
   </div>
+  <button class="follow-toggle" data-username="${post.author?.name}">Follow</button>
+
+    </a>
 `;
 
   container.appendChild(card);
 }
 /**
  * Renders the entire post feed and attaches event listeners to each post card.
- * Also handles new post rendering and post interaction (edit, delete, comment, react).
+ * Also handles new post rendering and post interaction (edit, delete, comment, react, follow and unfollow).
  * @async
  */
+
 export async function renderFeed() {
   const container = document.getElementById("post-box");
   container.innerHTML = "";
@@ -57,7 +63,6 @@ export async function renderFeed() {
     const { data: posts } = await fetchAllPosts();
      posts.forEach(post => renderPostCard(post, container));
      
-
     // Edit page 
     document.querySelectorAll(".edit-post").forEach(btn => {
       btn.addEventListener("click", (e) => {
@@ -85,8 +90,6 @@ export async function renderFeed() {
 
     // Handle comments
     
-
-
 document.querySelectorAll(".comment-form").forEach(form => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -106,38 +109,14 @@ document.querySelectorAll(".comment-form").forEach(form => {
   });
 });
 
-//* this is for delete commont 
-function renderComment(comment, postId, container) {
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("comment");
 
-  wrapper.innerHTML = `
-    <p><strong>${comment.owner}</strong>: ${comment.body}</p>
-    <button class="delete-comment" data-comment-id="${comment.id}" data-post-id="${postId}">Delete</button>
-  `;
-
-  container.appendChild(wrapper);
-
-  wrapper.querySelector(".delete-comment")?.addEventListener("click", async () => {
-    if (confirm("Delete this comment?")) {
-      try {
-        await deleteComment(postId, comment.id);
-        wrapper.remove();
-        alert("Comment deleted");
-      } catch (err) {
-        console.error(err);
-        alert("Failed to delete comment.");
-      }
-    }
-  });
-}
 
 // Handling the  reactions
 document.querySelectorAll(".reaction-buttons button").forEach(button => {
   button.addEventListener("click", async (e) => {
     const btn = e.currentTarget;
     const emoji = btn.dataset.emoji;
-    const postId = btn.closest(".reaction-buttons").dataset.id;
+    const postId = btn.closest(".reaction-buttons")?.dataset.id;
 
     if (!emoji || !postId) {
       console.warn("Missing emoji or postId", { emoji, postId });
@@ -145,20 +124,19 @@ document.querySelectorAll(".reaction-buttons button").forEach(button => {
     }
 
     try {
-      await reactToPost(postId, emoji);
+      await reactToPost(postId, emoji);  
 
       // Update count 
       const countSpan = btn.querySelector(".count");
       const currentCount = parseInt(countSpan.textContent) || 0;
       countSpan.textContent = currentCount + 1;
 
-
       btn.classList.toggle("active");
     } catch (err) {
       console.error("Failed to react:", err);
     }
   });
-})
+});
   } catch (err) {
     container.innerHTML = "<p> Failed to load posts</p>";
     console.error(err);

@@ -2,51 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Create your free Ingera Diary account and start expressing your thoughts, sharing memories, and following inspiring users.">
+    <meta
+      name="description"
+      content="Create your free Ingera Diary account and start expressing your thoughts, sharing memories, and following inspiring users."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <link rel="stylesheet" href="../../src/css/style.css" />
     <link rel="stylesheet" href="../../src/css/_reset.css" />
   </head>
   <body>
-    
-    <div  class="wrapper auth">
-    <h2>Register</h2><form id="registerForm" novalidate>
-      <label for="name">Name<span>*</span></label>
-      <input type="text" id="name" name="name" placeholder="Username" required autocomplete="name" />
-    
-      <label for="email">Email<span>*</span></label>
-      <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email" />
-    
-      <label for="password">Password<span>*</span></label>
-      <input type="password" id="password" name="password" placeholder="Password" required autocomplete="new-password"/>
-    
-      <label for="bio">Bio</label>
-      <input id="bio" name="bio" autocomplete="off" />
-    
-      <label for="avatar-url">Avatar URL</label>
-      <input id="avatar-url" name="avatar-url" autocomplete="off" />
-    
-      <label for="avatar-alt">Avatar ALT</label>
-      <input id="avatar-alt" name="avatar-alt" autocomplete="off" />
-    
-      <label for="banner-url">Banner URL</label>
-      <input id="banner-url" name="banner-url" autocomplete="off" />
-    
-      <label for="banner-alt">Banner ALT</label>
-      <input id="banner-alt" name="banner-alt" autocomplete="off" />
-    
-      <button type="submit">Register</button>
-      <a class="no-border" href="/auth/login/">Login</a>
-    </form>
-    
+    <div class="wrapper auth">
+      <h2>Register</h2>
+      <form id="registerForm" novalidate>
+        <label for="name">Name<span>*</span></label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Username"
+          required
+          autocomplete="name"
+        />
+
+        <label for="email">Email<span>*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+          autocomplete="email"
+        />
+
+        <label for="password">Password<span>*</span></label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+          autocomplete="new-password"
+        />
+
+        <label for="bio">Bio</label>
+        <input id="bio" name="bio" autocomplete="off" />
+
+        <label for="avatar-url">Avatar URL</label>
+        <input id="avatar-url" name="avatar-url" autocomplete="off" />
+
+        <label for="avatar-alt">Avatar ALT</label>
+        <input id="avatar-alt" name="avatar-alt" autocomplete="off" />
+
+        <label for="banner-url">Banner URL</label>
+        <input id="banner-url" name="banner-url" autocomplete="off" />
+
+        <label for="banner-alt">Banner ALT</label>
+        <input id="banner-alt" name="banner-alt" autocomplete="off" />
+
+        <button type="submit">Register</button>
+        <a class="no-border" href="/auth/login/">Login</a>
+      </form>
     </div>
     <!--script section-->
-    
+
     <script type="module">
-      import {handleRegisterForm} from "/src/js/ui/auth/register.js";
+      import { handleRegisterForm } from "/src/js/ui/auth/register.js";
       handleRegisterForm();
     </script>
-
   </body>
 </html>

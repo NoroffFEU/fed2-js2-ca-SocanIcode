@@ -1,4 +1,4 @@
-import { deletePost} from "@/js/api/post/delete.js";
+import { deletePost } from "@/js/api/post/delete.js";
 
 const form = document.getElementById("deletePostForm");
 
@@ -25,5 +25,3 @@ form?.addEventListener("submit", async (e) => {
     alert("Failed to delete the post.");
   }
 });
-
-

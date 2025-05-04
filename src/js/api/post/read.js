@@ -1,6 +1,5 @@
-
-// this handles all the delete post and comments 
-import {API_POST_BY_ID} from "../constants.js";
+// this handles all the delete post and comments
+import { API_POST_BY_ID } from "../constants.js";
 
 import { headers } from "../headers.js";
 /**
@@ -9,23 +8,17 @@ import { headers } from "../headers.js";
  * @returns {Promise<Object>} The post data.
  */
 
-
-export async function getPostById(id) { 
-  if (!id) throw new Error("Post ID is missing");
-
-  const url = `${API_POST_BY_ID}`;
-    console.log("Fetching:", url);
-
-  const res = await fetch(url, {
+export async function getSinglePost(id) {
+  const response = await fetch(API_POST_BY_ID(id), {
     headers: {
-      ...headers(true)
+      "Content-Type": "application/json",
     },
   });
 
-  if (!res.ok) {
-    throw new Error(`HTTP error! status: ${res.status}`);
+  if (!response.ok) {
+    throw new Error(`Could not fetch post: ${response.status}`);
   }
 
-  const { data } = await res.json();
+  const { data } = await response.json();
   return data;
 }

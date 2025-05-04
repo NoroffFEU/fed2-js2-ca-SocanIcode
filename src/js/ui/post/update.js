@@ -1,9 +1,9 @@
-import { updatePost } from '/src/js/api/post/update.js';
+import { updatePost } from "/src/js/api/post/update.js";
+
 /**
  * Handles editing post .
  * @param {Event} event - The form submit event.
  */
-
 
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.querySelector("#editPostForm");
@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Fetch existing post and populate form
   try {
     const res = await fetch(`API_POST_BY_ID/${id}`);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch post: ${res.status}`);
+    }
     const { data: post } = await res.json();
 
     titleInput.value = post.title || "";
@@ -45,7 +48,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const updatedPost = {
       title: titleInput.value,
       body: bodyInput.value,
-      tags: tagsInput.value.split(",").map(tag => tag.trim()).filter(Boolean),
+      tags: tagsInput.value
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean),
       media: {
         url: mediaInput.value,
         alt: mediaAltInput.value,
@@ -55,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       await updatePost(id, updatedPost);
       alert("Post updated!");
-      window.location.href = "/index/html"; 
+      window.location.href = "/index/html";
     } catch (err) {
       console.error("Update failed:", err);
       alert("Failed to update the post.");

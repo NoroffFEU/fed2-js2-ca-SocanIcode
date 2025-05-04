@@ -1,4 +1,4 @@
-import { API_PROFILE_BY_NAME } from  "../constants.js";
+import { API_PROFILE_BY_NAME } from "../constants.js";
 import { headers } from "../headers.js";
 
 /**

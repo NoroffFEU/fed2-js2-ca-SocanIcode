@@ -1,4 +1,4 @@
-#  Social Media App: Ingera Diary
+# Social Media App: Ingera Diary
 
 Welcome to the Noroff Social Media App — a simple frontend client for creating posts, following users, and managing profiles! I have create using fitctional app called ingera dairy.
 
@@ -6,26 +6,33 @@ Welcome to the Noroff Social Media App — a simple frontend client for creating
 
 ## 🚀 Project Setup
 
+using github project
+
 ### Clone this repo
+
 ```bash
 git clone [https://github.com/NoroffFEU/fed2-js2-ca-SocanIcode.git]
 cd [https://fed2-js2-ca-socanicode.netlify.app/]
 ```
 
 ### Install dependencies (if using Vite)
+
 ```bash
 npm install
 ```
 
 ### Run locally
+
 ```bash
 npm run dev
 ```
+
 Or simply open `index.html` directly in your browser if you're not using Vite.
 
 ---
 
 ## 📂 Project Structure
+
 ```
 ├── auth/
 │   ├── login/index.html
@@ -51,6 +58,7 @@ Or simply open `index.html` directly in your browser if you're not using Vite.
 ```
 
 ### Folder Highlights:
+
 - `auth/` → Login and Register pages
 - `post/` → Create and Edit Posts
 - `profile/` → User Profile page
@@ -60,12 +68,14 @@ Or simply open `index.html` directly in your browser if you're not using Vite.
 
 ---
 
-## 🔗 Live Demo
+## Live Demo
+
 Deployed here: [https://fed2-js2-ca-socanicode.netlify.app/]
 
 ---
 
-## 🛠️ Built With
+## Built With
+
 - HTML5
 - CSS3
 - JavaScript (ES6 modules)
@@ -73,7 +83,8 @@ Deployed here: [https://fed2-js2-ca-socanicode.netlify.app/]
 
 ---
 
-## 📚 Features
+## Features
+
 - Register and login users
 - Create, edit, delete posts
 - View all posts and search posts
@@ -83,7 +94,8 @@ Deployed here: [https://fed2-js2-ca-socanicode.netlify.app/]
 
 ---
 
-## ✅ Requirements Checklist
+## Requirements Checklist
+
 - [x] ES6 Modules
 - [x] JSDocs for major functions
 - [x] Basic UI
@@ -92,5 +104,6 @@ Deployed here: [https://fed2-js2-ca-socanicode.netlify.app/]
 
 ---
 
-## 📜 License
+## License
+
 This project is open-sourced for educational purposes.
