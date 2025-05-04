@@ -17,7 +17,7 @@ export async function updatePost(id, updatedData) {
       "Content-Type": "application'json",
 
     },
-    body:JSON.stringify(updateData),
+    body:JSON.stringify(updatedData),
     
 
   });

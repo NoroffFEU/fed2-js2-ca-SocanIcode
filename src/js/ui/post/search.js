@@ -1,4 +1,6 @@
 import { searchPosts } from "@/js/api/post/search.js";
+import { loadNav } from "/src/js/ui/global/nav.js";
+loadNav();
 
 const params = new URLSearchParams(window.location.search);
 const query = params.get("query");
