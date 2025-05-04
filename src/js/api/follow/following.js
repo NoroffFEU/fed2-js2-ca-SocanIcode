@@ -9,7 +9,8 @@ export async function getFollowing(username) {
   return await res.json();
 }
 
-// this is for unfollower friend
+
+// this is for follow/unfollower friend
 
 export async function followUser(username) {
   const res = await fetch(API_PROFILE_FOLLOW(username), {
