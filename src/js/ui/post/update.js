@@ -1,4 +1,4 @@
-import { updatePost } from "/src/js/api/post/update.js";
+import { getPostById, updatePost } from "/src/js/api/post/update.js";
 
 /**
  * Handles editing post .
